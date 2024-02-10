@@ -6,8 +6,10 @@ def input_error(func):
             return "Give me name and phone please."
         except IndexError:
             return "Enter the argument for the command"
-        except Exception:
+        except KeyError:
             return "Enter the argument for the command"
+        except Exception as e:
+            return f"{e}"
 
     return inner
 
