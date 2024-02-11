@@ -26,11 +26,6 @@ def add_contact(args, contacts):
     else:
         contacts[name] = phone
         return "Contact added."
-    if name in contacts:
-        return "Already have contact"
-    else:
-        contacts[name] = phone
-        return "Contact added."
 
 @input_error
 def change_contact(args, contacts):
