@@ -19,11 +19,13 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, *args
 
-@input_error
 def add_contact(args, contacts):
     name, phone = args
-    contacts[name] = phone
-    return "Contact added."
+    if name in contacts:
+        return "Already have contact"
+    else:
+        contacts[name] = phone
+        return "Contact added."
 
 @input_error
 def change_contact(args, contacts):
